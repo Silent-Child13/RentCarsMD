@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentCarsMD</title>
+    <link rel="stylesheet" href="rent-style.css">
+</head>
+<body>
+  <header class="top-header">
+    <div class="contact-info">
+        <p class="phone">Phone:<img class="phone-img" src="/images/phone.png"> +37360123456</p>
+    </div>
+    <div class="language-selector">
+      <select id="language-selector">
+        <option value="en" data-lang="en">English</option>
+        <option value="ro" data-lang="ro">Romanian</option>
+        <option value="ru" data-lang="ru">Russian</option>
+      </select>
+    </div>
+</header>
+
+<header class="main-header">
+  <div class="logo">
+      <a href="/index.html"><img src="/images/RentCarsMD.png" alt="CarsRent MD Logo"></a>
+  </div>
+  <div class="location-info">
+    <img src="/images/garage.jpg" alt="garage">
+    <p class="Nav-name" data-key="location">
+        Chisinau,<br>
+        <span class="nav-name" data-key="moldova">Moldova</span>
+    </p>
+    <img src="/images/alarm-clock-icon-256x255-3cak7z97.png" alt="garage">
+    <p class="Nav-names" data-key="hours">
+        Monday - Sunday<br>
+        <span class="nav-names" data-key="twenty_four">24/24</span>
+    </p>
+</div>
+
+
+  <div class="call-now">
+      <a href="tel:+37360252252" data-key="call_now">
+          <i class="fa fa-phone"></i> CALL NOW
+      </a>
+  </div>
+</header>
+
+<nav class="navigation">
+  <ul>
+    <li class="nav-item">
+      <a href="/index.html" data-key="home">Home</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a href="/nav-rent-cars/rent-fleet.html" class="nav-link" data-key="fleet">Fleet</a>
+      <div class="dropdown-content">
+        <ul>
+          <li><a href="/nav-rent-cars/rent-sedan.html?body_type=SUV" data-key="rent_suv">Rent SUV</a></li>
+          <li><a href="/nav-rent-cars/rent-sedan.html?body_type=Crossover" data-key="rent_crossover">Rent Crossover</a></li>
+          <li><a href="/nav-rent-cars/rent-sedan.html?body_type=Sedan" data-key="rent_sedan">Rent Sedan</a></li>
+          <li><a href="/nav-rent-cars/rent-sedan.html?body_type=Minivan" data-key="rent_minivan">Rent Minivan</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="/airport html/airport.html" data-key="airport_rental">Airport Car Rental</a>
+    </li>
+    <li class="nav-item">
+      <a href="/partener/partner.html" data-key="partnership">Partnership</a>
+    </li>
+    <li class="nav-item">
+      <a href="/about us/about-us.html" data-key="about_us">About Us</a>
+    </li>
+    <li class="nav-item">
+      <a href="/Terms/terms.html" data-key="terms">Terms and Rules</a>
+    </li>
+    <li class="nav-item">
+      <a href="/Contact/contact.html" data-key="contact_us">Contact Us</a>
+    </li>
+  </ul>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="hero-content">
+        <h1 id="hero-title" data-key="hero_title">Find Your Perfect Rental Car</h1>
+        <p id="hero-subtitle" data-key="hero_subtitle">Explore our wide range of vehicles.</p>
+        <a class="book-now-btn" id="book-now-btn" href="/Contact/contact.html" data-key="book_now">Book Now</a>
+    </div>
+  </section>
+
+        <section class="featured-cars">
+            <hr>
+            <h2 data-key="sedan_cars"></h2>
+            <div id="car-grid" class="car-grid"></div>
+        </section>
+    </main>
+    <hr>
+    <footer>
+      <div class="footer-content">
+          <div class="footer-logo">
+              <a href="/index.html"><img src="/images/RentCarsMD.png" alt="CarsRent MD Logo"></a>
+              <p data-key="footer_description">Rent a car in Chisinau with 24/7 Airport delivery. We offer cars for rent at affordable prices, the largest car rental fleet in Chisinau, Moldova.</p>
+          </div>
+          <div class="footer-links">
+              <h3 data-key="additional_information">ADDITIONAL INFORMATION</h3>
+              <ul>
+                  <li><a href="/index.html" data-key="home">Home</a></li>
+                  <li><a href="/nav-rent-cars/rent-fleet.html" data-key="fleet">Fleet</a></li>
+                  <li><a href="/nav-rent-cars/rent-sedan.html?body_type=SUV" data-key="rent_suv">Rent SUV</a></li>
+                  <li><a href="/nav-rent-cars/rent-sedan.html?body_type=Crossover" data-key="rent_crossover">Rent Crossover</a></li>
+                  <li><a href="/nav-rent-cars/rent-sedan.html?body_type=Sedan" data-key="rent_sedan">Rent Sedan</a></li>
+                  <li><a href="/nav-rent-cars/rent-sedan.html?body_type=Minivan" data-key="rent_minivan">Rent Minivan</a></li>
+                  <li><a href="/airport html/airport.html" data-key="airport_rental">Airport Car Rental</a></li>
+                  <li><a href="/partener/partner.html" data-key="partnership">Partnership</a></li>
+                  <li><a href="/about us/about-us.html" data-key="about_us">About Us</a></li>
+                  <li><a href="/Terms/terms.html" data-key="terms">Terms and Rules</a></li>
+                  <li><a href="/Contact/contact.html" data-key="contact_us">Contact Us</a></li>
+              </ul>
+          </div>
+          <div class="footer-contact">
+              <h3 data-key="central_office">CENTRAL OFFICE</h3>
+              <p data-key="office_address">Chisinau, str. Ion Creanga 13</p>
+              <p data-key="phone-number">Phone: <a href="tel:+37360123456">+37360123456</a></p>
+              <p data-key="email">Email: <a href="mailto:carsrent.md@gmail.com" data-key="email_address">RentCarsMD@gmail.com</a></p>
+              <p data-key="working_hours">Working hours: 24/24</p>
+          </div>
+      </div>
+      <hr>
+      <div class="footer-bottom">
+          <p data-key="footer_rights">&copy; 2024 RentCarsMD. All rights reserved.</p>
+      </div>
+    </footer>
+    
+    <script src="/translations/translations.js"></script>
+    <script src="sedan.js"></script>
+
+
+</body>
+</html>

@@ -9,11 +9,15 @@
 <body>
   <header class="top-header">
     <div class="contact-info">
-        <p class="phone">Phone:<img class="phone-img" src="/images/phone.png"> +37360123456</p>
+      <p class="phone" data-key="phone">Phone:<img class="phone-img" src="/images/phone.png"> <span>+37360123456</span></p>
     </div>
     <div class="language-selector">
-        <p>English<span class="dropdown-arrow">&#x25BC;</span></p>
-    </div>
+      <select id="language-selector">
+        <option value="en" data-lang="en">English</option>
+        <option value="ro" data-lang="ro">Romanian</option>
+        <option value="ru" data-lang="ru">Russian</option>
+      </select>
+    </div>    
 </header>
 
 <header class="main-header">
@@ -21,13 +25,19 @@
         <a href="/index.html"><img src="/images/RentCarsMD.png" alt="CarsRent MD Logo"></a>
     </div>
     <div class="location-info">
-        <img src="/images/garage.jpg" alt="garage">
-        <p class="Nav-name"> Chisinau,<br><span class="nav-name">Moldova</span></p>
-        <img src="/images/alarm-clock-icon-256x255-3cak7z97.png" alt="garage">
-        <p class="Nav-names">Monday - Sunday<br><span class="nav-names">24/24</span></p>
-    </div>
+      <img src="/images/garage.jpg" alt="garage">
+      <p class="Nav-name" data-key="location">
+          Chisinau,<br>
+          <span class="nav-name" data-key="moldova">Moldova</span>
+      </p>
+      <img src="/images/alarm-clock-icon-256x255-3cak7z97.png" alt="garage">
+      <p class="Nav-names" data-key="hours">
+          Monday - Sunday<br>
+          <span class="nav-names" data-key="twenty_four">24/24</span>
+      </p>
+  </div>
     <div class="call-now">
-        <a href="tel:+37360252252">
+        <a href="tel:+37360252252" data-key="call_now">
             <i class="fa fa-phone"></i> CALL NOW
         </a>
     </div>
@@ -36,33 +46,33 @@
 <nav class="navigation">
   <ul>
     <li class="nav-item">
-      <a href="/index.html">Home</a>
+      <a href="/index.html" data-key="home">Home</a>
     </li>
     <li class="nav-item dropdown">
-      <a href="/nav rent cars html/rent-fleet.html" class="nav-link">Fleet</a>
+      <a href="/nav-rent-cars/rent-fleet.html" class="nav-link" data-key="fleet">Fleet</a>
       <div class="dropdown-content">
         <ul>
-          <li><a href="/nav rent cars html/rent-suv.html">Rent SUV</a></li>
-          <li><a href="/nav rent cars html/rent-crossover.html">Rent Crossover</a></li>
-          <li><a href="/nav rent cars html/rent-sedan.html">Rent Sedan</a></li>
-          <li><a href="/nav rent cars html/rent-minivan.html">Rent Minivan</a></li>
+          <li><a href="/nav-rent-cars/rent-sedan.html?body_type=SUV" data-key="rent_suv">Rent SUV</a></li>
+          <li><a href="/nav-rent-cars/rent-sedan.html?body_type=Crossover" data-key="rent_crossover">Rent Crossover</a></li>
+          <li><a href="/nav-rent-cars/rent-sedan.html?body_type=Sedan" data-key="rent_sedan">Rent Sedan</a></li>
+          <li><a href="/nav-rent-cars/rent-sedan.html?body_type=Minivan" data-key="rent_minivan">Rent Minivan</a></li>
         </ul>
       </div>
     </li>
     <li class="nav-item">
-      <a href="/airport html/airport.css">Airport Car Rental</a>
+      <a href="/airport-info/airport.html" data-key="airport_rental">Airport Car Rental</a>
     </li>
     <li class="nav-item">
-      <a href="/partener/partner.html">Partnership</a>
+      <a href="/partener/partner.html" data-key="partnership">Partnership</a>
     </li>
     <li class="nav-item">
-      <a href="/about us/about-us.html">About Us</a>
+      <a href="/about us/about-us.html" data-key="about_us">About Us</a>
     </li>
     <li class="nav-item">
-      <a href="/Terms/terms.html">Terms and Rules</a>
+      <a href="/Terms/terms.html" data-key="terms">Terms and Rules</a>
     </li>
     <li class="nav-item">
-      <a href="/Contact/contact.html">Contact Us</a>
+      <a href="/Contact/contact.html" data-key="contact_us">Contact Us</a>
     </li>
   </ul>
 </nav>
@@ -77,33 +87,88 @@
         </section>
         <div class="road-nav">
           <div class="road-text">
-            <p>ABOUT US</p>
+            <p data-key="about_us_nav_title"></p>
           </div>
           <div class="home-text">
             <img class="" src="/images/house.png">
-            <a href="/index.html">Home</a>
+            <a href="/index.html" data-key="home_link_text"></a>
             <p class="greater">></p>
-            <p class="partner-text">ABOUT US</p>
+            <p class="partner-text"
+            data-key="about_us_nav_title"></p>
           </div>
         </div>
         <div class="container"> <div class="row">
           <div class="col-md-12">
-          <h1>ABOUT US</h1>
+          <h1 data-key="about_us_nav_title"></h1>
           </div>
           </div>
           <div class="row">
           <div class="col-md-12">
-            <p dir="ltr" style="line-height:1.38;text-align: justify;margin-top:0pt;margin-bottom:6pt;"><font face="Source Sans Pro, sans-serif"><span style="font-size: 14px; white-space: pre-wrap;"><b>Vision of the company</b></span></font></p>
-            <p dir="ltr" style="line-height:1.38;text-align: justify;margin-top:0pt;margin-bottom:6pt;"><font face="Source Sans Pro, sans-serif"><span style="font-size: 17.3333px; white-space: pre-wrap;"><br></span></font></p>
-            <p dir="ltr" style="line-height:1.38;text-align: justify;margin-top:0pt;margin-bottom:6pt;"><font face="Source Sans Pro, sans-serif"><span style="font-size: 14px; white-space: pre-wrap;">Our vision is to become the most important operator in the Car Rental field from the Republic of Moldova, through continuous development of new relationships and opportunities, as well as the promise to always offer services of the highest quality.</span></font></p>
-            <p dir="ltr" style="line-height:1.38;text-align: justify;margin-top:0pt;margin-bottom:6pt;"><font face="Source Sans Pro, sans-serif"><span style="font-size: 17.3333px; white-space: pre-wrap;"><br></span></font></p>
-            <p dir="ltr" style="line-height:1.38;text-align: justify;margin-top:0pt;margin-bottom:6pt;"><font face="Source Sans Pro, sans-serif"><span style="font-size: 14px; white-space: pre-wrap;"><b>Values of the company</b></span></font></p>
-            <p dir="ltr" style="line-height:1.38;text-align: justify;margin-top:0pt;margin-bottom:6pt;"><font face="Source Sans Pro, sans-serif"><span style="font-size: 17.3333px; white-space: pre-wrap;"><br></span></font></p>
-            <p dir="ltr" style="line-height:1.38;text-align: justify;margin-top:0pt;margin-bottom:6pt;"><font face="Source Sans Pro, sans-serif"><span style="font-size: 14px; white-space: pre-wrap;">Respect: We work with our partners and suppliers with respect and integrity to develop and maintain long-term and mutually beneficial work relationships.</span></font></p>
-            <p dir="ltr" style="line-height:1.38;text-align: justify;margin-top:0pt;margin-bottom:6pt;"><font face="Source Sans Pro, sans-serif"><span style="font-size: 17.3333px; white-space: pre-wrap;"><br></span></font></p>
-            <p dir="ltr" style="line-height:1.38;text-align: justify;margin-top:0pt;margin-bottom:6pt;"><font face="Source Sans Pro, sans-serif"><span style="font-size: 14px; white-space: pre-wrap;">Passion: We are truly passionate about our business. We look after our customers by showing the quality of our services; we promote creative and innovative ideas and solutions.</span></font></p>
-            <p dir="ltr" style="line-height:1.38;text-align: justify;margin-top:0pt;margin-bottom:6pt;"><font face="Source Sans Pro, sans-serif"><span style="font-size: 17.3333px; white-space: pre-wrap;"><br></span></font></p>
-            <p dir="ltr" style="line-height:1.38;text-align: justify;margin-top:0pt;margin-bottom:6pt;"><font face="Source Sans Pro, sans-serif"><span style="font-size: 14px; white-space: pre-wrap;">Excellence: We are committed to always being a high – performing organization focused on total satisfaction of the customer. We continuously analyze our processes and ourselves to become the best out of the best.</span></font><br></p>
+            <p dir="ltr" style="line-height:1.38;text-align: justify;margin-top:0pt;margin-bottom:6pt;">
+              <font face="Source Sans Pro, sans-serif">
+                <span style="font-size: 14px; white-space: pre-wrap;" data-key="vision_title"><b></b></span>
+              </font>
+            </p>
+            <p dir="ltr" style="line-height:1.38;text-align: justify;margin-top:0pt;margin-bottom:6pt;">
+              <font face="Source Sans Pro, sans-serif">
+                <span style="font-size: 17.3333px; white-space: pre-wrap;"><br></span>
+              </font>
+            </p>
+            <p dir="ltr" style="line-height:1.38;text-align: justify;margin-top:0pt;margin-bottom:6pt;">
+              <font face="Source Sans Pro, sans-serif">
+                <span style="font-size: 14px; white-space: pre-wrap;" data-key="vision_description">
+                  
+                </span>
+              </font>
+            </p>
+            <p dir="ltr" style="line-height:1.38;text-align: justify;margin-top:0pt;margin-bottom:6pt;">
+              <font face="Source Sans Pro, sans-serif">
+                <span style="font-size: 17.3333px; white-space: pre-wrap;"><br></span>
+              </font>
+            </p>
+            <p dir="ltr" style="line-height:1.38;text-align: justify;margin-top:0pt;margin-bottom:6pt;">
+              <font face="Source Sans Pro, sans-serif">
+                <span style="font-size: 14px; white-space: pre-wrap;" data-key="values_title"><b></b></span>
+              </font>
+            </p>
+            <p dir="ltr" style="line-height:1.38;text-align: justify;margin-top:0pt;margin-bottom:6pt;">
+              <font face="Source Sans Pro, sans-serif">
+                <span style="font-size: 17.3333px; white-space: pre-wrap;"><br></span>
+              </font>
+            </p>
+            <p dir="ltr" style="line-height:1.38;text-align: justify;margin-top:0pt;margin-bottom:6pt;">
+              <font face="Source Sans Pro, sans-serif">
+                <span style="font-size: 14px; white-space: pre-wrap;" data-key="respect_description">
+                
+                </span>
+              </font>
+            </p>
+            <p dir="ltr" style="line-height:1.38;text-align: justify;margin-top:0pt;margin-bottom:6pt;">
+              <font face="Source Sans Pro, sans-serif">
+                <span style="font-size: 17.3333px; white-space: pre-wrap;"><br></span>
+              </font>
+            </p>
+            <p dir="ltr" style="line-height:1.38;text-align: justify;margin-top:0pt;margin-bottom:6pt;">
+              <font face="Source Sans Pro, sans-serif">
+                <span style="font-size: 14px; white-space: pre-wrap;" data-key="passion_description">
+                 
+                </span>
+              </font>
+            </p>
+            <p dir="ltr" style="line-height:1.38;text-align: justify;margin-top:0pt;margin-bottom:6pt;">
+              <font face="Source Sans Pro, sans-serif">
+                <span style="font-size: 17.3333px; white-space: pre-wrap;"><br></span>
+              </font>
+            </p>
+            <p dir="ltr" style="line-height:1.38;text-align: justify;margin-top:0pt;margin-bottom:6pt;">
+              <font face="Source Sans Pro, sans-serif">
+                <span style="font-size: 14px; white-space: pre-wrap;" data-key="excellence_description">
+                 
+                </span>
+              </font>
+              <br>
+            </p>
+            
           </div>
           </div>
     </main>
@@ -112,40 +177,40 @@
       <div class="footer-content">
           <div class="footer-logo">
               <a href="/index.html"><img src="/images/RentCarsMD.png" alt="CarsRent MD Logo"></a>
-              <p>Rent a car in Chisinau with 24/7 Airport delivery. We offer cars for rent at affordable prices, the largest car rental fleet in Chisinau, Moldova.</p>
+              <p data-key="footer_description">Rent a car in Chisinau with 24/7 Airport delivery. We offer cars for rent at affordable prices, the largest car rental fleet in Chisinau, Moldova.</p>
           </div>
           <div class="footer-links">
-              <h3>ADDITIONAL INFORMATION</h3>
+              <h3 data-key="additional_information">ADDITIONAL INFORMATION</h3>
               <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/nav rent cars html/rent-fleet.html">Fleet</a></li>
-                <li><a href="/nav rent cars html/rent-suv.html">Rent SUV</a></li>
-                <li><a href="/nav rent cars html/rent-crossover.html">Rent Crossover</a></li>
-                <li><a href="/nav rent cars html/rent-sedan.html">Rent Sedan</a></li>
-                <li><a href="/nav rent cars html/rent-minivan.html">Rent Minivan</a></li>
-                <li><a href="/airport html/airport.html">Airport Car Rental</a></li>
-                <li><a href="/partener/partner.html">Partnership</a></li>
-                <li><a href="/about us/about-us.html">About Us</a></li>
-                <li><a href="/Terms/terms.html">Terms and Rules</a></li>
-                <li><a href="/Contact/contact.html">Contact Us</a></li>
+                  <li><a href="/index.html" data-key="home">Home</a></li>
+                  <li><a href="/nav-rent-cars/rent-fleet.html" data-key="fleet">Fleet</a></li>
+                  <li><a href="/nav-rent-cars/rent-sedan.html?body_type=SUV" data-key="rent_suv">Rent SUV</a></li>
+                  <li><a href="/nav-rent-cars/rent-sedan.html?body_type=Crossover" data-key="rent_crossover">Rent Crossover</a></li>
+                  <li><a href="/nav-rent-cars/rent-sedan.html?body_type=Sedan" data-key="rent_sedan">Rent Sedan</a></li>
+                  <li><a href="/nav-rent-cars/rent-sedan.html?body_type=Minivan" data-key="rent_minivan">Rent Minivan</a></li>
+                  <li><a href="/airport html/airport.html" data-key="airport_rental">Airport Car Rental</a></li>
+                  <li><a href="/partener/partner.html" data-key="partnership">Partnership</a></li>
+                  <li><a href="//about-us.html" data-key="about_us"></a></li>
+                  <li><a href="/Terms/terms.html" data-key="terms">Terms and Rules</a></li>
+                  <li><a href="/Contact/contact.html" data-key="contact_us">Contact Us</a></li>
               </ul>
           </div>
           <div class="footer-contact">
-              <h3>CENTRAL OFFICE</h3>
-              <p>Chisinau, str. Ion Creanga 13</p>
-              <p>Phone: <a href="tel:+37360252252">+37360123456</a></p>
-              <p>Email: <a href="mailto:carsrent.md@gmail.com">RentCarsMD@gmail.com</a></p>
-              <p>Working hours: 24/24</p>
+              <h3 data-key="central_office">CENTRAL OFFICE</h3>
+              <p data-key="office_address">Chisinau, str. Ion Creanga 13</p>
+              <p data-key="phone-number">Phone: <a href="tel:+37360123456">+37360123456</a></p>
+              <p data-key="email">Email: <a href="mailto:carsrent.md@gmail.com" data-key="email_address">RentCarsMD@gmail.com</a></p>
+              <p data-key="working_hours">Working hours: 24/24</p>
           </div>
       </div>
       <hr>
       <div class="footer-bottom">
-        <p>&copy; 2024 RentCarsMD. All rights reserved.</p>
+          <p data-key="footer_rights">&copy; 2024 RentCarsMD. All rights reserved.</p>
       </div>
-  </footer>
-  
+    </footer>
 
-    <script src="script.js"></script>
+    <script src="/translations/translations.js"></script>
+    <script src="about-us.js"></script>
 
 
 </body>

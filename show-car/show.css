@@ -591,11 +591,13 @@ margin-left: 100px;
   flex-direction: column;
   height: auto;
   max-width: 500px;
+  
 }
 .details-container{
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: -40px;
 }
 .details-container p{
   line-height: 1.7;
@@ -620,7 +622,7 @@ margin-left: 100px;
   font-weight: bold;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   list-style-type: none;
 }
 #mainImage {
@@ -737,6 +739,10 @@ margin-left: 100px;
 
 .rent-h2{
 text-align: center;
+margin-top: 150px;
+}
+.price-per-day{
+  text-align: center;
 }
 
 .form-container {
@@ -810,8 +816,9 @@ text-align: center;
   font-weight: bold;
   color: #FF0000;
 }
-
-
+.night-fee, #priceDetails, #discountAmountText, #finalPriceText {
+  display: none; /* Hide these elements initially */
+}
 
 
 
