@@ -20,10 +20,9 @@ body {
   display: flex;
   align-items: center;
 }
-.contact-info p,
-.language-selector p {
+.contact-info p{
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
 }
 .phone{
   font-weight: bold;
@@ -38,10 +37,58 @@ body {
 .language-selector {
   position: relative;
   cursor: pointer;
+  display: flex; /* Align items in a row */
+  align-items: center; /* Center vertically */
 }
+
+.language-selector select {
+  width: 100%;
+  background-color: transparent;
+  color: #EDF2F4;
+  font-weight: bold;
+  border: none;
+  padding: 10px;
+  padding-right: 22px; 
+  font-size: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.language-selector::after {
+  content: "▼"; /* Dropdown arrow */
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #EDF2F4;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+.language-selector option {
+  background-color: #4B4E53; /* Mid grey */
+  color: #EDF2F4;
+  padding: 10px;
+}
+
+.language-selector select:focus {
+  border: 2px solid #97051D; /* Dark red focus */
+}
+
+
+/* Styling for paragraph inside language selector */
+.language-selector p {
+  margin: 0 !important;
+  font-size: 14px !important;
+}
+
 .dropdown-arrow {
-  font-size: 12px;
+  font-size: 12px !important;
 }
+
 
   /* Main-Header */
 

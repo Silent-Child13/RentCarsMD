@@ -16,8 +16,8 @@
     <div class="language-selector">
       <select id="language-selector">
         <option value="en" data-lang="en">English</option>
-        <option value="ro" data-lang="ro">Romanian</option>
-        <option value="ru" data-lang="ru">Russian</option>
+        <option value="ro" data-lang="ro">Română</option>
+        <option value="ru" data-lang="ru">Русский</option>
       </select>
     </div>    
 </header>
@@ -91,13 +91,13 @@
         <hr>
         <div class="road-nav">
           <div class="road-text">
-            <p>Cars</p>
+            <p data-key="cars">Cars</p>
           </div>
           <div class="home-text">
             <img class="" src="/images/house.png">
-            <a href="/index.html">Home</a>
+            <a href="/index.html" data-key="home">Home</a>
             <p class="greater">></p>
-            <a href="/nav-rent-cars/rent-fleet.html">Fleet</a>
+            <a href="/nav-rent-cars/rent-fleet.html" data-key="fleet">Fleet</a>
             <p class="greater">></p>
             <a id="carTypeLink" href="#"></a>
             <p class="greater">></p>
@@ -219,10 +219,10 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ro.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
     <script src="/translations/translations.js"></script>
+    <script src="car.js"></script>
     <script src="/show-car/rental.js"></script>
     <script src="/script.js"></script>
     <script src="show.js"></script>
-    <script src="car.js"></script>
 
 </body>
 

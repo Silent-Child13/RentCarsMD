@@ -91,6 +91,7 @@ translations = {
         "car_body_type": "Car Type Body:",
         "doors_number": "Doors Number:",
         "seats_number": "Seats Number:",
+        "cars": "Cars",
             
     },
     "ro": {
@@ -185,6 +186,7 @@ translations = {
         "car_body_type": "Tip caroserie:",
         "doors_number": "Număr de uși:",
         "seats_number": "Număr de locuri:",
+        "cars": "Mașini",
 
     },
     "ru": {
@@ -279,6 +281,7 @@ translations = {
         "car_body_type": "Тип кузова:",
         "doors_number": "Количество дверей:",
         "seats_number": "Количество мест:",
+        "cars": "Машины",
         
         }
 }

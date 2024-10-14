@@ -1,8 +1,15 @@
 let translations = {};
 let car = {};
 let formattedEngineCapacity = '';
+
 document.addEventListener("DOMContentLoaded", () => {
   const languageSelector = document.getElementById('language-selector');
+
+  // Retrieve language from localStorage or set default to 'en'
+  const selectedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+
+  // Set the selected language in the language selector dropdown
+  languageSelector.value = selectedLanguage;
 
   // Function to fetch translations from the server
   window.fetchTranslations = async function(lang) {
@@ -10,8 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const response = await fetch(`http://127.0.0.1:8000/translate/${lang}`);
       if (!response.ok) throw new Error("Translation fetch failed");
 
-       translations = await response.json();
-      updateContent(translations);
+      translations = await response.json();
+      setTimeout(() => {
+       updateContent(translations);
+      }, "100")
     } catch (error) {
       console.error("Translation error:", error);
     }
@@ -86,8 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const returnTimeLabel = document.querySelector('label[data-key="return_time_label"]');
       if (returnTimeLabel) returnTimeLabel.textContent = translations.return_time_label || 'Return Time';
       
-  
-
       const pickupDatePlaceholder = document.getElementById('pickupDate');
       if (pickupDatePlaceholder) pickupDatePlaceholder.placeholder = translations.pickup_date;
   
@@ -103,8 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const discountCodePlaceholder = document.getElementById('discountCode');
       if (discountCodePlaceholder) discountCodePlaceholder.placeholder = translations.discount_code;
 
-
-
       const priceText = document.getElementById('priceText');
       if (priceText) priceText.textContent = translations.priceText;
 
@@ -113,9 +118,8 @@ document.addEventListener("DOMContentLoaded", () => {
         dayElement.textContent = dayElement.textContent.replace(/Days|Zile|Дня/, translations.Day || 'Days');
       });
 
-
-
       const yearLabel = document.querySelector('li .label[data-key="year_label"]');
+      console.log(yearLabel);
       if (yearLabel) yearLabel.innerHTML = translations.year || 'Year:';
       
       const gearboxLabel = document.querySelector('li .label[data-key="gearbox_label"]');
@@ -135,10 +139,6 @@ document.addEventListener("DOMContentLoaded", () => {
       
       const seatsNumberLabel = document.querySelector('li .label[data-key="seats_number_label"]');
       if (seatsNumberLabel) seatsNumberLabel.innerHTML = translations.seats_number || 'Seats Number:';
-      
-
-
-
 
       const finalPriceLabel = document.querySelector('h2[data-key="final_price_label"]');
       if (finalPriceLabel) finalPriceLabel.textContent = translations.final_price_label || 'Final Price';
@@ -157,14 +157,12 @@ document.addEventListener("DOMContentLoaded", () => {
       
       const invalidDateOrTimeText = document.getElementById('invalidDateOrTimeText');
       if (invalidDateOrTimeText) invalidDateOrTimeText.textContent = translations.invalid_date_or_time || 'Invalid date or time';
-      
-      // Adding translations for pricing information
+
       const pricePerDayLabel = document.querySelector('label[data-key="price_per_day"]');
       if (pricePerDayLabel) pricePerDayLabel.textContent = translations.price_per_day || 'Price per day';
       
       const totalDaysLabel = document.querySelector('label[data-key="total_days"]');
       if (totalDaysLabel) totalDaysLabel.textContent = translations.total_days || 'Total days';
-      
 
       // Check for specific paths to call updateCarTranslations
       if (window.location.pathname === '/index.html' || 
@@ -181,12 +179,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Event listener for language change
-  languageSelector.addEventListener('change', (event) => {
-    const selectedLanguage = event.target.value;
-    window.fetchTranslations(selectedLanguage);
-  });
+  // Fetch and update translations based on selected language
+  fetchTranslations(selectedLanguage);
 
-  // Initially fetch translations in the default language
-  window.fetchTranslations('en');
+  // Handle language selector changes
+  languageSelector.addEventListener('change', () => {
+    const lang = languageSelector.value;
+
+    // Save the selected language to localStorage
+    localStorage.setItem('selectedLanguage', lang);
+
+    // Fetch and update translations
+    fetchTranslations(lang);
+  });
 });

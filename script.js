@@ -6,13 +6,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const currentCarId = parseInt(urlParams.get('id'), 10);
 
+  // Get the selected language from localStorage or default to 'en'
+  const storedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+  
+  // Set the language selector value to the stored language
+  if (languageSelector) {
+    languageSelector.value = storedLanguage;
+  }
+
+  // Fetch translations and car data based on selected language
+  async function fetchTranslationsAndCars(lang) {
+    // Fetch translations
+    window.fetchTranslations(lang, (translations) => {
+      window.currentTranslations = translations; // Save translations in global scope
+
+      // Fetch cars with the language-specific data
+      fetchCars(lang);
+    });
+  }
+
   async function fetchCars(lang) {
     try {
       const response = await fetch(`http://localhost:8000/rentcars/?lang=${lang}`);
       if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
       const cars = await response.json();
-      console.log(cars); // Inspect the fetched data
       const translations = window.currentTranslations || {}; // Use current translations if available
 
       // Filter out the current car
@@ -54,18 +72,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Define this function in script.js
+  // Define this function to update translations when language changes
   window.updateCarTranslations = function(translations) {
     window.currentTranslations = translations; // Save translations to be used in fetchCars
     fetchCars(languageSelector.value); // Refresh cars with updated translations
   };
 
-  // Initial fetch for cars with the default language
-  fetchCars(languageSelector.value);
+  // Fetch cars and translations based on the saved language
+  fetchTranslationsAndCars(storedLanguage);
 
   // Event listener for language change
   languageSelector.addEventListener('change', (event) => {
     const selectedLanguage = event.target.value;
-    window.fetchTranslations(selectedLanguage);
+    
+    // Save the selected language to localStorage
+    localStorage.setItem('selectedLanguage', selectedLanguage);
+    
+    // Fetch new translations and car data
+    fetchTranslationsAndCars(selectedLanguage);
   });
 });
