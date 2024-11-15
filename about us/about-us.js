@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Retrieve the current language from local storage or set to default
-    const currentLang = localStorage.getItem('selectedLanguage') || 'en'; // Default to 'en'
+    const currentLang = localStorage.getItem('selectedLanguage') || 'en'; 
     
-    // Fetch translations for the current language
     fetchTranslations(currentLang);
 
     function fetchTranslations(lang) {
@@ -24,14 +22,12 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    const languageSelector = document.querySelector('#language-selector'); // Adjust selector as needed
+    const languageSelector = document.querySelector('#language-selector'); 
     if (languageSelector) {
-        // Set the initial value of the selector to the current language
         languageSelector.value = currentLang;
 
         languageSelector.addEventListener('change', function() {
             const selectedLanguage = this.value;
-            // Store the selected language in local storage
             localStorage.setItem('selectedLanguage', selectedLanguage);
             fetchTranslations(selectedLanguage);
         });

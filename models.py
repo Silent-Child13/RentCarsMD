@@ -5,7 +5,7 @@ class Car(Base):
     __tablename__ = 'cars'
 
     id = Column(Integer, primary_key=True, index=True)
-    image_url = Column(String(255), index=True)  # Specify a length for VARCHAR
+    image_url = Column(String(255), index=True)  
     name_en = Column(String(255))
     name_ro = Column(String(255))
     name_ru = Column(String(255))

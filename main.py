@@ -28,12 +28,12 @@ app.mount("/show-car", StaticFiles(directory="show-car"), name="show-car")
 app.mount("/resources-images", StaticFiles(directory="resources-images"), name="resources-images")
 
 def reset_database():
-    # Drop all tables
+   
     Base.metadata.drop_all(bind=engine)
-    # Create all tables
+   
     Base.metadata.create_all(bind=engine)
 
-# Call the function to reset the database
+
 reset_database()
 
 class CarCreate(BaseModel):

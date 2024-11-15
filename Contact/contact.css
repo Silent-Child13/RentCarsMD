@@ -32,8 +32,8 @@ vertical-align: middle;
 .language-selector {
   position: relative;
   cursor: pointer;
-  display: flex; /* Align items in a row */
-  align-items: center; /* Center vertically */
+  display: flex; 
+  align-items: center; 
 }
 
 .language-selector select {
@@ -53,7 +53,7 @@ vertical-align: middle;
 }
 
 .language-selector::after {
-  content: "▼"; /* Dropdown arrow */
+  content: "▼"; 
   position: absolute;
   right: 10px;
   top: 50%;
@@ -64,13 +64,13 @@ vertical-align: middle;
 }
 
 .language-selector option {
-  background-color: #4B4E53; /* Mid grey */
+  background-color: #4B4E53; 
   color: #EDF2F4;
   padding: 10px;
 }
 
 .language-selector select:focus {
-  border: 2px solid #97051D; /* Dark red focus */
+  border: 2px solid #97051D; 
 }
 
 
@@ -399,7 +399,7 @@ margin: 0 20px;
 .footer-links h3, .footer-contact h3 {
 margin-bottom: 20px;
 font-size: 18px;
-color: #1D1E27; /* Dark color for headings */
+color: #1D1E27; 
 font-weight: bold;
 text-transform: uppercase;
 }
@@ -414,14 +414,14 @@ margin-bottom: 10px;
 }
 
 .footer-links ul li a {
-color: #1D1E27; /* Dark color for links */
+color: #1D1E27; 
 text-decoration: none;
 font-size: 14px;
 }
 
 .footer-links ul li a:hover {
 text-decoration: underline;
-color: #C80018; /* Darker red for hover effect */
+color: #C80018; 
 }
 .footer-contact{
   padding-top: 50px;
@@ -431,23 +431,23 @@ color: #C80018; /* Darker red for hover effect */
 
 .footer-contact p {
 margin-bottom: 10px;
-color: #1D1E27; /* Dark color for text */
+color: #1D1E27; 
 font-size: 14px;
 }
 
 .footer-contact a {
-color: #C80018; /* Darker red for links */
+color: #C80018;
 text-decoration: none;
 font-size: 14px;
 }
 
 .footer-contact a:hover {
 text-decoration: underline;
-color: #FF0000; /* Bright red for hover effect */
+color: #FF0000; 
 }
 
 .footer-background {
-background-color: #1D1E27; /* Dark background */
+background-color: #1D1E27; 
 padding: 20px 0;
 }
 
@@ -457,8 +457,8 @@ justify-content: space-between;
 max-width: 1200px;
 margin: 0 auto;
 padding: 20px;
-background-color: #FFFFFF; /* White background */
-border-radius: 8px; /* Optional: Add rounded corners for a smoother look */
+background-color: #FFFFFF; 
+border-radius: 8px; 
 }
 
 .footer-bottom {
@@ -562,9 +562,9 @@ margin-left: 100px;
   padding: 10px 20px;
   font-size: 16px;
   color: #fff;
-  background-color: #FF0000; /* Red color */
+  background-color: #FF0000; 
   border: none;
-  border-radius: 0; /* No rounded corners */
+  border-radius: 0; 
   text-decoration: none;
   cursor: pointer;
 }
@@ -574,6 +574,6 @@ margin-left: 100px;
 }
 
 .submit-btn:hover {
-  background-color: #C80018; /* Darker red on hover */
+  background-color: #C80018; 
 }
 

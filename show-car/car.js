@@ -7,15 +7,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const languageSelector = document.getElementById("language-selector");
 
   let currentCar = {};
-  let language = languageSelector.value; // Set default language
+  let language = languageSelector.value; 
 
-  // Fetch car data when the page loads
+  
   fetchCarData();
 
-  // Update language and re-display car details on language change
   languageSelector.addEventListener("change", () => {
     language = languageSelector.value;
-    displayCarDetails(currentCar); // Re-display car data with the new language
+    displayCarDetails(currentCar); 
   });
 
   async function fetchCarData() {
@@ -24,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
       currentCar = await response.json();
-      displayCarDetails(currentCar); // Store car data for future updates
+      displayCarDetails(currentCar); 
     } catch (error) {
       console.error('Error fetching car data:', error);
       detailsContainer.innerHTML = `<p class="error">Failed to load car details. Please try again later.</p>`;
@@ -35,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const transmission = language === 'ro' ? car.transmissionRo : language === 'ru' ? car.transmissionRu : car.transmission;
     const fuelType = language === 'ro' ? car.fuel_typeRo : language === 'ru' ? car.fuel_typeRu : car.fuel_type;
-    const bodyType = language === 'ru' ? car.body_typeRu : car.body_type; // Only for Russian
+    const bodyType = language === 'ru' ? car.body_typeRu : car.body_type; 
     const description = language === 'ro' ? car.descriptionRo : language === 'ru' ? car.descriptionRu : car.description;
 
     const carTypeLink = document.getElementById('carTypeLink');
@@ -78,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <li><img src="/instruments-below-car/hate.jpg" alt="46+ Days"><h4>46+ Days</h4><p>${car.price_46_days} €</p></li>
     `;
 
-    // Image modal setup
     if (car.image_urls && car.image_urls.length > 0) {
       setupModalImages(car.image_urls);
     } else {
@@ -97,13 +95,13 @@ document.addEventListener("DOMContentLoaded", () => {
       modalContent.appendChild(slide);
     });
 
-    currentSlide(1); // Show the first image
+    currentSlide(1);
   }
 
-  // Call the function to fetch car data
+  
   fetchCarData();
 
-  // Modal functions
+  
   window.openModal = function() {
     modal.style.display = "block";
   };
@@ -112,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.style.display = "none";
   };
 
-  // Slideshow functions
+  
   let slideIndex = 1;
   window.plusSlides = function(n) {
     currentSlide(slideIndex += n);

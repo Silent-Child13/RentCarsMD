@@ -5,13 +5,10 @@ let formattedEngineCapacity = '';
 document.addEventListener("DOMContentLoaded", () => {
   const languageSelector = document.getElementById('language-selector');
 
-  // Retrieve language from localStorage or set default to 'en'
   const selectedLanguage = localStorage.getItem('selectedLanguage') || 'en';
 
-  // Set the selected language in the language selector dropdown
   languageSelector.value = selectedLanguage;
 
-  // Function to fetch translations from the server
   window.fetchTranslations = async function(lang) {
     try {
       const response = await fetch(`http://127.0.0.1:8000/translate/${lang}`);
@@ -28,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateContent(translations) {
     try {
-      // Update elements with data-key attributes
+     
       document.querySelectorAll('[data-key]').forEach(element => {
         const key = element.getAttribute('data-key');
         if (translations[key]) {
@@ -36,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-      // Update static text for specific elements
+  
       const heroTitle = document.querySelector('.hero h1');
       if (heroTitle) heroTitle.textContent = translations.hero_title || heroTitle.textContent;
 
@@ -49,11 +46,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const phoneElement = document.querySelector('.phone');
       if (phoneElement) {
         const phoneLabel = translations.phone || 'Phone:';
-        const phoneNumber = '+37360123456'; // Static phone number
+        const phoneNumber = '+37360123456';
         phoneElement.innerHTML = `${phoneLabel} <img class="phone-img" src="/images/phone.png"> ${phoneNumber}`;
       }
 
-      // Function to translate body type
+   
       function translateBodyType(bodyType, translations) {
         switch (bodyType.toLowerCase()) {
           case 'sedan':
@@ -64,25 +61,25 @@ document.addEventListener("DOMContentLoaded", () => {
               return translations.crossover_cars || 'Crossover Cars';
           case 'minivan':
               return translations.minivan_cars || 'Minivan Cars';
-          case 'other': // Add this case for Other Cars
-              return translations.other_cars || 'Other Cars'; // Return translation for Other Cars
+          case 'other': 
+              return translations.other_cars || 'Other Cars'; 
           default:
-              return translations.rent_cars || 'Rent Cars'; // Fallback to Rent Cars for unknown body types
+              return translations.rent_cars || 'Rent Cars'; 
         }
       }
 
-      // Update featured cars heading
-      const featuredCarsHeading = document.querySelector('.featured-cars h2[data-key="sedan_cars"]'); // Use data-key attribute
+     
+      const featuredCarsHeading = document.querySelector('.featured-cars h2[data-key="sedan_cars"]'); 
       if (featuredCarsHeading) {
         const bodyType = new URLSearchParams(window.location.search).get('body_type');
         
-        // Use the translation for Rent Cars if bodyType is not provided or not recognized
+  
         const translatedHeading = bodyType ? translateBodyType(bodyType, translations) : translations.sedan_cars || 'Rent Cars';
 
-        featuredCarsHeading.textContent = translatedHeading; // Set the dynamic heading
+        featuredCarsHeading.textContent = translatedHeading;
       }
 
-      // Update specific labels safely
+    
       const pickupDateLabel = document.querySelector('label[data-key="pickup_date_label"]');
       if (pickupDateLabel) pickupDateLabel.textContent = translations.pickup_date_label || 'Pick Up Date';
       
@@ -164,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const totalDaysLabel = document.querySelector('label[data-key="total_days"]');
       if (totalDaysLabel) totalDaysLabel.textContent = translations.total_days || 'Total days';
 
-      // Check for specific paths to call updateCarTranslations
+      
       if (window.location.pathname === '/index.html' || 
           window.location.pathname === '/airport-info/airport.html' || 
           window.location.pathname === '/nav-rent-cars/rent-fleet.html' || 
@@ -179,17 +176,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Fetch and update translations based on selected language
+ 
   fetchTranslations(selectedLanguage);
 
-  // Handle language selector changes
   languageSelector.addEventListener('change', () => {
     const lang = languageSelector.value;
 
-    // Save the selected language to localStorage
     localStorage.setItem('selectedLanguage', lang);
 
-    // Fetch and update translations
     fetchTranslations(lang);
   });
 });

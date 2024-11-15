@@ -24,7 +24,7 @@ def translate_text(text, lang):
 def translate_car_data(cars, lang):
     translated_data = []
     for car in cars:
-        # Default to English if the key does not exist for the requested language
+
         name = car.get(f"name_{lang}", car.get("name_en", "Unknown"))
 
         translated_car = {
@@ -314,7 +314,7 @@ def fetch_and_post_cars(lang):
     
     try:
         response = requests.post(url, json=translated_car_data)
-        response.raise_for_status()  # Will raise HTTPError for bad responses (4xx and 5xx)
+        response.raise_for_status()  
         print(f"Response: {response.json()}")
     except requests.exceptions.HTTPError as err:
         print(f"HTTP error occurred: {err}")
@@ -322,5 +322,4 @@ def fetch_and_post_cars(lang):
     except Exception as err:
         print(f"Other error occurred: {err}")
 
-# Example usage:
-fetch_and_post_cars('ro')  # Replace 'ro' with the desired language code
+fetch_and_post_cars('ro')  

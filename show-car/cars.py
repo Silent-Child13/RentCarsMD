@@ -3,7 +3,6 @@ from flask import Flask, jsonify, abort
 from databaseCars import load_cars, load_car_by_id
 from flask_cors import CORS
 
-# Set the directory of this file
 base_dir = os.path.dirname(os.path.abspath(__file__))
 
 app = Flask(__name__)

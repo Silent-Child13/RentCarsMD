@@ -1,4 +1,3 @@
-# translations.py
 translations = {
     "en": {
         "hero_title": "Find Your Perfect Rental Car",

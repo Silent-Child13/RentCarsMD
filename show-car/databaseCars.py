@@ -2,7 +2,6 @@ import os
 import json
 import mysql.connector
 
-# Set the directory of this file
 base_dir = os.path.dirname(os.path.abspath(__file__))
 json_file_path = os.path.join(base_dir, 'cars.json')
 
@@ -73,7 +72,7 @@ def insert_cars_to_db(cars):
     
     cursor = connection.cursor()
     
-    # Prepare the SQL insert statement
+   
     insert_query = """
     INSERT INTO rentdescription (
         name, year, transmission, transmissionRo, transmissionRu,
@@ -86,10 +85,9 @@ def insert_cars_to_db(cars):
     ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
     """
     
-    # Loop through each car and insert it into the database
+   
     for car in cars:
         try:
-            # Check if image_urls is a list and convert it to a JSON string
             image_urls_json = json.dumps(car['image_urls']) if isinstance(car['image_urls'], list) else car['image_urls']
 
             prices = car.get('prices_per_day', {})
@@ -103,19 +101,19 @@ def insert_cars_to_db(cars):
                 car['name'],
                 car['year'],
                 car['transmission'],
-                car.get('transmissionRo', ''),  # New field for Romanian
-                car.get('transmissionRu', ''),  # New field for Russian
+                car.get('transmissionRo', ''),  
+                car.get('transmissionRu', ''),  
                 car['fuel_type'],
-                car.get('fuel_typeRo', ''),  # New field for Romanian
-                car.get('fuel_typeRu', ''),  # New field for Russian
+                car.get('fuel_typeRo', ''),  
+                car.get('fuel_typeRu', ''), 
                 car['engine_capacity'],
                 car['body_type'],
-                car.get('body_typeRu', ''),  # New field for Russian
+                car.get('body_typeRu', ''),  
                 car['doors'],
                 car['seats'],
                 car['description'],
-                car.get('descriptionRo', ''),  # New field for Romanian
-                car.get('descriptionRu', ''),  # New field for Russian
+                car.get('descriptionRo', ''),  
+                car.get('descriptionRu', ''), 
                 car['image_url'],
                 image_urls_json,
                 price_1_2_days,
@@ -127,7 +125,7 @@ def insert_cars_to_db(cars):
         except mysql.connector.Error as err:
             print(f"Error inserting car {car['name']}: {err}")
 
-    # Commit the changes and close the connection
+    
     connection.commit()
     cursor.close()
     connection.close()
